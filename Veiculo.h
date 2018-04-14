@@ -19,7 +19,6 @@ protected:
 public:
     Veiculo();
     Veiculo(int speed, int cor);
-    ~Veiculo();
     void setX();
     void setY();
     void setFabrica();
@@ -35,6 +34,7 @@ public:
     void moveBaixo();
     void moveEsquerda();
     void moveDireita();*/
+    ~Veiculo();
 };
 
 

@@ -91,4 +91,4 @@ void Veiculo::moveDireita() {
     }
 }*/
 
-Veiculo::~Veiculo() {}
+Veiculo::~Veiculo(){}
