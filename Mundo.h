@@ -7,6 +7,9 @@
 
 
 #include <iostream>
+#include "Moto.h"
+#include "Carro.h"
+#include "Caminhao.h"
 
 using namespace std;
 
@@ -48,7 +51,8 @@ protected:
 
 public:
     Mundo();
-    /*void attMundo(Caminhao &caminhoes, Carro &carros, Moto &motos);*/
+    void attMapa();
+    /*void attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<Moto*> motos);*/
     void printMundo();
     ~Mundo();
 };
