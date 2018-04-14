@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <random>
 #include "Mundo.h"
 #include "Veiculo.h"
 #include "Caminhao.h"
@@ -10,12 +9,16 @@ int main() {
 
     Mundo *m = new Mundo();
     Veiculo *v = new Veiculo(1, 5);
-    Caminhao *c1= new Caminhao();
+    vector<Caminhao*> c;
+    c.push_back(new Caminhao());
+    c.push_back(new Caminhao());
 
     //testes
     m->printMundo();
     cout << v->getX() << "" << v->getY() << "" << v->getFabrica() << "" << v->getSpeed() << "" << v->getCor();
-    cout << c1->getX() << "" << c1->getY() << "" << c1->getFabrica() << "" << c1->getSpeed() << "" << c1->getCor() << "" << c1->getCarga();
+    cout << c[0]->getX() << "" << c[0]->getY() << "" << c[0]->getFabrica() << "" << c[0]->getSpeed() << "" << c[0]->getCor() << "" << c[0]->getCarga();
+    cout << c[1]->getX() << "" << c[1]->getY() << "" << c[1]->getFabrica() << "" << c[1]->getSpeed() << "" << c[1]->getCor() << "" << c[1]->getCarga();
+
 
     return 0;
 }

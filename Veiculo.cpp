@@ -3,7 +3,6 @@
 //
 #include <iostream>
 #include <string>
-#include <random>
 #include "Veiculo.h"
 using namespace std;
 
@@ -16,16 +15,10 @@ Veiculo::Veiculo(int speed, int cor){
     setCor(cor);
 }
 void Veiculo::setX(){
-    random_device rd;
-    default_random_engine gen(rd());
-    uniform_int_distribution<> disx(0, 59);
-    this->x = disx(gen);
+    this->x = rand() % 60;
 }
 void Veiculo::setY(){
-    random_device rd;
-    default_random_engine gen(rd());
-    uniform_int_distribution<> disy(0, 29);
-    this->y = disy(gen);
+    this->y = rand() % 30;
 }
 void Veiculo::setFabrica(){
     this->fabrica = "false";
