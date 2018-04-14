@@ -12,8 +12,8 @@ class Veiculo {
 protected:
     int x;
     int y;
-    int speed;
     string fabrica;
+    int speed;
     int cor;
 
 public:
