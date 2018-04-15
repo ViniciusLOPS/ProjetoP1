@@ -1,6 +1,7 @@
 //
 // Created by User on 14/04/2018.
 //
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include "Veiculo.h"

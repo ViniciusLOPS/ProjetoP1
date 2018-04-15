@@ -17,4 +17,4 @@ int Caminhao::getCarga(){
     return carga;
 }
 
-Caminhao::~Caminhao() {}
+Caminhao::~Caminhao() = default;

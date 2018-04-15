@@ -37,8 +37,10 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
             attmapa[y][x] = motos[i]->getCor();
         }
         else if (attmapa[y][x] == 2 ){
-            motos[i]->setFabrica("true");
-            motos.push_back(new Moto());
+            if(motos[i]->getFabrica() == "false"){
+                motos[i]->setFabrica("true");
+                motos.push_back(new Moto());
+            }
             attmapa[y][x] = motos[i]->getCor();
         }
         else if (attmapa[y][x] == 3){
@@ -51,6 +53,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
             i--;
             motos.erase(motos.begin() + i);
             i--;
+            attmapa[y][x] = mapa[y][x];
         }
     }
     for (int i = 0; i < carros.size(); i++){
@@ -61,8 +64,10 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
             attmapa[y][x] = carros[i]->getCor();
         }
         else if (attmapa[y][x] == 2 ){
-            carros[i]->setFabrica("true");
-            carros.push_back(new Carro());
+            if(motos[i]->getFabrica() == "false"){
+                carros[i]->setFabrica("true");
+                carros.push_back(new Carro());
+            }
             attmapa[y][x] = carros[i]->getCor();
         }
         else if (attmapa[y][x] == 3){
@@ -84,6 +89,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
             i--;
             carros.erase(carros.begin() + i);
             i--;
+            attmapa[y][x] = mapa[y][x];
         }
 
     }
@@ -95,8 +101,10 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
             attmapa[y][x] = caminhoes[i]->getCor();
         }
         else if (attmapa[y][x] == 2 ){
-            caminhoes[i]->setFabrica("true");
-            caminhoes.push_back(new Caminhao);
+            if(motos[i]->getFabrica() == "false"){
+                caminhoes[i]->setFabrica("true");
+                caminhoes.push_back(new Caminhao);
+            }
             attmapa[y][x] = caminhoes[i]->getCor();
         }
         else if (attmapa[y][x] == 3){
@@ -127,6 +135,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
             i--;
             caminhoes.erase(caminhoes.begin() + i);
             i--;
+            attmapa[y][x] = mapa[y][x];
         }
 
     }

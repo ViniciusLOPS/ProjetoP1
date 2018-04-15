@@ -2,6 +2,7 @@
 // Created by User on 14/04/2018.
 //
 
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include "Veiculo.h"
@@ -50,5 +51,5 @@ string Moto::getTipo(){
     return tipo;
 }
 
-Moto::~Moto() {}
+Moto::~Moto() = default;
 
