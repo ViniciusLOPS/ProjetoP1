@@ -78,10 +78,11 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
                     break;
                 }
             }
+            i--;
+            carros.erase(carros.begin() + i);
+            i--;
         }
-        i--;
-        carros.erase(carros.begin() + i);
-        i--;
+
     }
     for (int i = 0; i < caminhoes.size(); i++){
         x = caminhoes[i]->getX();
@@ -117,10 +118,11 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
                     break;
                 }
             }
+            i--;
+            caminhoes.erase(caminhoes.begin() + i);
+            i--;
         }
-        i--;
-        caminhoes.erase(caminhoes.begin() + i);
-        i--;
+
     }
     printMundo();
 }
