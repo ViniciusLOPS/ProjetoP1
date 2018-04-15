@@ -51,5 +51,5 @@ string Moto::getTipo(){
     return tipo;
 }
 
-Moto::~Moto() = default;
+Moto::~Moto(){};
 

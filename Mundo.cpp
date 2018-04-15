@@ -26,122 +26,123 @@ void Mundo::attMapa(){
         }
     }
 }
-void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<Moto*> motos){
+void Mundo::attMundo(vector<Caminhao*> *caminhoes, vector<Carro*> *carros, vector<Moto*> *motos){
     attMapa();
     int x, y;
-    for (int i = 0; i < motos.size(); i++){
-        x = motos[i]->getX();
-        y = motos[i]->getY();
+    for (int i = 0; i < motos->size(); i++){
+        x = motos->operator[](i)->getX();
+        y = motos->operator[](i)->getY();
         if (attmapa[y][x] == 0 || attmapa[y][x] == 1){
-            motos[i]->setFabrica("false");
-            attmapa[y][x] = motos[i]->getCor();
+            motos->operator[](i)->setFabrica("false");
+            attmapa[y][x] = motos->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 2 ){
-            if(motos[i]->getFabrica() == "false"){
-                motos[i]->setFabrica("true");
-                motos.push_back(new Moto());
+            if(motos->operator[](i)->getFabrica() == "false"){
+                motos->operator[](i)->setFabrica("true");
+                motos->push_back(new Moto());
             }
-            attmapa[y][x] = motos[i]->getCor();
+            attmapa[y][x] = motos->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 3){
             for (int j = 0; j < i; j++){
-                if( x == motos[j]->getX() && y == motos[j]->getY()){
-                    motos.erase(motos.begin() + j);
+                if( x == motos->operator[](j)->getX() && y == motos->operator[](j)->getY()){
+                    motos->erase(motos->begin() + j);
                     break;
                 }
             }
             i--;
-            motos.erase(motos.begin() + i);
+            motos->erase(motos->begin() + i);
             i--;
             attmapa[y][x] = mapa[y][x];
         }
     }
-    for (int i = 0; i < carros.size(); i++){
-        x = carros[i]->getX();
-        y = carros[i]->getY();
+    for (int i = 0; i < carros->size(); i++){
+        x = carros->operator[](i)->getX();
+        y = carros->operator[](i)->getY();
         if (attmapa[y][x] == 0 || attmapa[y][x] == 1){
-            carros[i]->setFabrica("false");
-            attmapa[y][x] = carros[i]->getCor();
+            carros->operator[](i)->setFabrica("false");
+            attmapa[y][x] = carros->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 2 ){
-            if(motos[i]->getFabrica() == "false"){
-                carros[i]->setFabrica("true");
-                carros.push_back(new Carro());
+            if(motos->operator[](i)->getFabrica() == "false"){
+                carros->operator[](i)->setFabrica("true");
+                carros->push_back(new Carro());
             }
-            attmapa[y][x] = carros[i]->getCor();
+            attmapa[y][x] = carros->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 3){
-            for (int j = 0; j < motos.size(); j++){
-                if( x == motos[j]->getX() && y == motos[j]->getY()){
-                    motos.erase(motos.begin() + j);
+            for (int j = 0; j < motos->size(); j++){
+                if( x == motos->operator[](j)->getX() && y == motos->operator[](j)->getY()){
+                    motos->erase(motos->begin() + j);
                     break;
                 }
             }
-            attmapa[y][x] = carros[i]->getCor();
+            attmapa[y][x] = carros->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 4){
             for (int j = 0; j < i; j++){
-                if( x == carros[j]->getX() && y == carros[j]->getY()){
-                    carros.erase(carros.begin() + j);
+                if( x == carros->operator[](j)->getX() && y == carros->operator[](j)->getY()){
+                    carros->erase(carros->begin() + j);
                     break;
                 }
             }
             i--;
-            carros.erase(carros.begin() + i);
+            carros->erase(carros->begin() + i);
             i--;
             attmapa[y][x] = mapa[y][x];
         }
 
     }
-    for (int i = 0; i < caminhoes.size(); i++){
-        x = caminhoes[i]->getX();
-        y = caminhoes[i]->getY();
+    for (int i = 0; i < caminhoes->size(); i++){
+        x = caminhoes->operator[](i)->getX();
+        y = caminhoes->operator[](i)->getY();
         if (attmapa[y][x] == 0 || attmapa[y][x] == 1){
-            caminhoes[i]->setFabrica("false");
-            attmapa[y][x] = caminhoes[i]->getCor();
+            caminhoes->operator[](i)->setFabrica("false");
+            attmapa[y][x] = caminhoes->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 2 ){
-            if(motos[i]->getFabrica() == "false"){
-                caminhoes[i]->setFabrica("true");
-                caminhoes.push_back(new Caminhao);
+            if(motos->operator[](i)->getFabrica() == "false"){
+                caminhoes->operator[](i)->setFabrica("true");
+                caminhoes->push_back(new Caminhao);
             }
-            attmapa[y][x] = caminhoes[i]->getCor();
+            attmapa[y][x] = caminhoes->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 3){
-            for (int j = 0; j < motos.size(); j++){
-                if( x == motos[j]->getX() && y == motos[j]->getY()){
-                    motos.erase(motos.begin() + j);
+            for (int j = 0; j < motos->size(); j++){
+                if( x == motos->operator[](j)->getX() && y == motos->operator[](j)->getY()){
+                    motos->erase(motos->begin() + j);
                     break;
                 }
             }
-            attmapa[y][x] = caminhoes[i]->getCor();
+            attmapa[y][x] = caminhoes->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 4){
-            for (int j = 0; j < carros.size(); j++){
-                if( x == carros[j]->getX() && y == carros[j]->getY()){
-                    carros.erase(carros.begin() + j);
+            for (int j = 0; j < carros->size(); j++){
+                if( x == carros->operator[](j)->getX() && y == carros->operator[](j)->getY()){
+                    carros->erase(carros->begin() + j);
                     break;
                 }
             }
-            attmapa[y][x] = caminhoes[i]->getCor();
+            attmapa[y][x] = caminhoes->operator[](i)->getCor();
         }
         else if (attmapa[y][x] == 5){
             for (int j = 0; j < i; j++){
-                if( x == caminhoes[j]->getX() && y == caminhoes[j]->getY()){
-                    caminhoes.erase(caminhoes.begin() + j);
+                if( x == caminhoes->operator[](j)->getX() && y == caminhoes->operator[](j)->getY()){
+                    caminhoes->erase(caminhoes->begin() + j);
                     break;
                 }
             }
             i--;
-            caminhoes.erase(caminhoes.begin() + i);
+            caminhoes->erase(caminhoes->begin() + i);
             i--;
             attmapa[y][x] = mapa[y][x];
         }
 
     }
-    cout << "\033[2;31m Caminhoes: \033[0m" << caminhoes.size() << "\033[2;34m Carros: \033[0m" << carros.size()
-         << "\033[2;32m Motos: \033[0m" << motos.size() << endl;
+    cout << "\033[2;31m Caminhoes: \033[0m" << caminhoes->size() << "\033[2;34m Carros: \033[0m" << carros->size()
+         << "\033[2;32m Motos: \033[0m" << motos->size() << endl;
     printMundo();
+    moveAll(*caminhoes, *carros, *motos);
 }
 void Mundo::moveAll(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<Moto*> motos){
     for (auto &caminhoe : caminhoes) {

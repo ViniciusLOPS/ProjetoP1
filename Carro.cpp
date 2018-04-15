@@ -17,4 +17,4 @@ void Carro::setPassageiros(){
 int Carro::getPassageiros(){
     return passageiros;
 }
-Carro::~Carro() = default;
+Carro::~Carro() {};

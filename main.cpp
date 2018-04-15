@@ -14,19 +14,14 @@ int main() {
     vector<Moto*> motos;
     for (int i = 0; i < 10 ; i++){
         caminhoes.push_back(new Caminhao());
-    }
-    for (int i = 0; i < 10 ; i++){
         carros.push_back(new Carro());
-    }
-    for (int i = 0; i < 10 ; i++){
         motos.push_back(new Moto());
     }
 
     //testes
     while(!caminhoes.empty() && !carros.empty() || !caminhoes.empty() && !motos.empty() ||
             !carros.empty() && !motos.empty()){
-        m->attMundo(caminhoes, carros, motos);
-        m->moveAll(caminhoes, carros, motos);
+        m->attMundo(&caminhoes, &carros, &motos);
     }
     caminhoes.clear();
     carros.clear();
