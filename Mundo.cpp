@@ -39,6 +39,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
         else if (attmapa[y][x] == 2 ){
             motos[i]->setFabrica("true");
             motos.push_back(new Moto());
+            attmapa[y][x] = motos[i]->getCor();
         }
         else if (attmapa[y][x] == 3){
             for (int j = 0; j < i; j++){
@@ -62,6 +63,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
         else if (attmapa[y][x] == 2 ){
             carros[i]->setFabrica("true");
             carros.push_back(new Carro());
+            attmapa[y][x] = carros[i]->getCor();
         }
         else if (attmapa[y][x] == 3){
             for (int j = 0; j < motos.size(); j++){
@@ -70,6 +72,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
                     break;
                 }
             }
+            attmapa[y][x] = carros[i]->getCor();
         }
         else if (attmapa[y][x] == 4){
             for (int j = 0; j < i; j++){
@@ -94,6 +97,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
         else if (attmapa[y][x] == 2 ){
             caminhoes[i]->setFabrica("true");
             caminhoes.push_back(new Caminhao);
+            attmapa[y][x] = caminhoes[i]->getCor();
         }
         else if (attmapa[y][x] == 3){
             for (int j = 0; j < motos.size(); j++){
@@ -102,6 +106,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
                     break;
                 }
             }
+            attmapa[y][x] = caminhoes[i]->getCor();
         }
         else if (attmapa[y][x] == 4){
             for (int j = 0; j < carros.size(); j++){
@@ -110,6 +115,7 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
                     break;
                 }
             }
+            attmapa[y][x] = caminhoes[i]->getCor();
         }
         else if (attmapa[y][x] == 5){
             for (int j = 0; j < i; j++){
@@ -124,7 +130,20 @@ void Mundo::attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<
         }
 
     }
+    cout << "\033[2;31m Caminhoes: \033[0m" << caminhoes.size() << "\033[2;34m Carros: \033[0m" << carros.size()
+         << "\033[2;32m Motos: \033[0m" << motos.size() << endl;
     printMundo();
+}
+void Mundo::moveAll(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<Moto*> motos){
+    for (auto &caminhoe : caminhoes) {
+        caminhoe->move();
+    }
+    for (auto &carro : carros) {
+        carro->move();
+    }
+    for (auto &moto : motos) {
+        moto->move();
+    }
 }
 void Mundo::printMundo() {
     for (int i = 0; i < size_y; i++){
@@ -152,4 +171,4 @@ void Mundo::printMundo() {
     }
 }
 
-Mundo::~Mundo(){}
+Mundo::~Mundo() = default;

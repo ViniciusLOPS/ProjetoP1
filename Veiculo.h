@@ -28,11 +28,11 @@ public:
     string getFabrica();
     int getSpeed();
     int getCor();
-    /*void move();
+    void move();
     void moveCima();
     void moveBaixo();
     void moveEsquerda();
-    void moveDireita();*/
+    void moveDireita();
     ~Veiculo();
 };
 

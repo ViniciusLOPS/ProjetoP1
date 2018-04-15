@@ -6,7 +6,7 @@
 #include "Veiculo.h"
 using namespace std;
 
-Veiculo::Veiculo() {}
+Veiculo::Veiculo() = default;
 Veiculo::Veiculo(int speed, int cor){
     setX();
     setY();
@@ -44,7 +44,7 @@ int Veiculo::getSpeed(){
 int Veiculo::getCor() {
     return cor;
 }
-/*void Veiculo::move(){
+void Veiculo::move(){
     int m = rand() % 4 + 1;
     if (m == 1){
         moveCima();
@@ -82,6 +82,6 @@ void Veiculo::moveDireita() {
     if (x > 59){
         x = 60 + x;
     }
-}*/
+}
 
-Veiculo::~Veiculo(){}
+Veiculo::~Veiculo() = default;
