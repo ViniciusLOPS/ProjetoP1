@@ -6,7 +6,6 @@
 #define UNTITLED_VEICULO_H
 #include <iostream>
 #include <string>
-#include <random>
 using namespace std;
 class Veiculo {
 protected:
@@ -21,7 +20,7 @@ public:
     Veiculo(int speed, int cor);
     void setX();
     void setY();
-    void setFabrica();
+    void setFabrica(string fabrica);
     void setSpeed(int speed);
     void setCor(int cor);
     int getX();

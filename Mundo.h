@@ -52,7 +52,7 @@ protected:
 public:
     Mundo();
     void attMapa();
-    /*void attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<Moto*> motos);*/
+    void attMundo(vector<Caminhao*> caminhoes, vector<Carro*> carros, vector<Moto*> motos);
     void printMundo();
     ~Mundo();
 };

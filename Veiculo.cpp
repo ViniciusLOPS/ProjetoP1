@@ -10,7 +10,7 @@ Veiculo::Veiculo() {}
 Veiculo::Veiculo(int speed, int cor){
     setX();
     setY();
-    setFabrica();
+    setFabrica("false");
     setSpeed(speed);
     setCor(cor);
 }
@@ -20,8 +20,8 @@ void Veiculo::setX(){
 void Veiculo::setY(){
     this->y = rand() % 30;
 }
-void Veiculo::setFabrica(){
-    this->fabrica = "false";
+void Veiculo::setFabrica(string fabrica){
+    this->fabrica = fabrica;
 }
 void Veiculo::setSpeed(int speed){
     this->speed = speed;
