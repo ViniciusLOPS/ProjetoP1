@@ -46,11 +46,13 @@ void Mundo::attMundo(vector<Caminhao*> *caminhoes, vector<Carro*> *carros, vecto
         else if (attmapa[y][x] == 3){
             for (int j = 0; j < i; j++){
                 if( x == motos->operator[](j)->getX() && y == motos->operator[](j)->getY()){
+                    delete motos->at(j);
                     motos->erase(motos->begin() + j);
                     break;
                 }
             }
             i--;
+            delete motos->at(i);
             motos->erase(motos->begin() + i);
             i--;
             attmapa[y][x] = mapa[y][x];
@@ -73,6 +75,7 @@ void Mundo::attMundo(vector<Caminhao*> *caminhoes, vector<Carro*> *carros, vecto
         else if (attmapa[y][x] == 3){
             for (int j = 0; j < motos->size(); j++){
                 if( x == motos->operator[](j)->getX() && y == motos->operator[](j)->getY()){
+                    delete motos->at(j);
                     motos->erase(motos->begin() + j);
                     break;
                 }
@@ -82,11 +85,13 @@ void Mundo::attMundo(vector<Caminhao*> *caminhoes, vector<Carro*> *carros, vecto
         else if (attmapa[y][x] == 4){
             for (int j = 0; j < i; j++){
                 if( x == carros->operator[](j)->getX() && y == carros->operator[](j)->getY()){
+                    delete carros->at(j);
                     carros->erase(carros->begin() + j);
                     break;
                 }
             }
             i--;
+            delete carros->at(i);
             carros->erase(carros->begin() + i);
             i--;
             attmapa[y][x] = mapa[y][x];
@@ -110,6 +115,7 @@ void Mundo::attMundo(vector<Caminhao*> *caminhoes, vector<Carro*> *carros, vecto
         else if (attmapa[y][x] == 3){
             for (int j = 0; j < motos->size(); j++){
                 if( x == motos->operator[](j)->getX() && y == motos->operator[](j)->getY()){
+                    delete motos->at(j);
                     motos->erase(motos->begin() + j);
                     break;
                 }
@@ -119,6 +125,7 @@ void Mundo::attMundo(vector<Caminhao*> *caminhoes, vector<Carro*> *carros, vecto
         else if (attmapa[y][x] == 4){
             for (int j = 0; j < carros->size(); j++){
                 if( x == carros->operator[](j)->getX() && y == carros->operator[](j)->getY()){
+                    delete carros->at(j);
                     carros->erase(carros->begin() + j);
                     break;
                 }
@@ -128,11 +135,13 @@ void Mundo::attMundo(vector<Caminhao*> *caminhoes, vector<Carro*> *carros, vecto
         else if (attmapa[y][x] == 5){
             for (int j = 0; j < i; j++){
                 if( x == caminhoes->operator[](j)->getX() && y == caminhoes->operator[](j)->getY()){
+                    delete caminhoes->at(j);
                     caminhoes->erase(caminhoes->begin() + j);
                     break;
                 }
             }
             i--;
+            delete caminhoes->at(i);
             caminhoes->erase(caminhoes->begin() + i);
             i--;
             attmapa[y][x] = mapa[y][x];
